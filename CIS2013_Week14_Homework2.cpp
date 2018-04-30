@@ -1,10 +1,13 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "ToDo.h"
 
 using namespace std;
 
 int main(){
+	ifstream in_stream;
+	ofstream out_stream;
 	char next;
 	int len = 0;
 	string action;
@@ -47,6 +50,10 @@ int main(){
 			case 'x':
 				exit (1);
 				// All done with todo list
+				break;
+			default : 
+		cout << "Illegal value." << endl;
+		cout << endl;
 				break;
 		}
 	}
