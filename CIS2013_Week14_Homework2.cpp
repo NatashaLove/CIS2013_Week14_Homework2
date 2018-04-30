@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-	char next = 'y';
+	char next;
 	int len = 0;
 	string action;
 	
@@ -27,7 +27,7 @@ int main(){
 		cout << "Done list item (d)" << endl;
 		cout << "Print list (p)" << endl;
 		cout << "Exit list app (x)" << endl;
-		cout << "What do you want to do: ";
+		cout << "What do you want to do: "<< endl;
 		cin >> next;
 		
 		switch(next){
@@ -40,9 +40,12 @@ int main(){
 				list.done();
 				break;
 			case 'p':
+			
+			// почему то печатается БЕЗ первого слова..
 				list.print();
 				break;
 			case 'x':
+				exit (1);
 				// All done with todo list
 				break;
 		}

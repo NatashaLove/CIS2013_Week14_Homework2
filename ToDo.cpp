@@ -24,8 +24,8 @@ using namespace std;
 		delete [] list;
 	}
 	
-	//void ToDo:: add (getline (cin, item)){
-	//ЗДЕСЬ поменяла string item на getline (cin, item) - не работает..	
+	
+	//ЗДЕСЬ поменяла string item на getline (cin, item) 
 	void ToDo::add (string item){	
 		getline (cin, item);
 		
@@ -40,8 +40,9 @@ using namespace std;
 		list [next] = "";
 	}	// finish - delete the last thing in list
 	
+	// почему то печатается БЕЗ первого слова..
 	void ToDo::print ()	{
-		for (int i=-1;i<next; i++) {
+		for (int i=0;i<next; i++) {
 			cout << i << list [i] << endl;
 		}
 	}

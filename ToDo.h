@@ -22,10 +22,12 @@ class ToDo {
 	
 	~ToDo (); // Destroy the list
 	
-	//void add (getline (cin, item)); // add stuff to list
-	//ЗДЕСЬ поменяла string item на getline (cin, item) - не работает..
+	// add stuff to list
+	//ЗДЕСЬ поменяла string item на getline (cin, item) 
 	void add (string item);
 	void  done (); // finish/deletes the last thing in list
+	
+	// почему то печатается БЕЗ первого слова..
 	void print ();
 	
 	
