@@ -9,7 +9,7 @@ int main(){
 	int len = 0;
 	string action;
 	
-	cout << "How long to you want your list: ";
+	cout << "How long do you want your list: ";
 	cin >> len;
 	
 	ToDo list(len);
@@ -33,9 +33,7 @@ int main(){
 		switch(next){
 			case 'a':
 				cout << "Name a todo item: ";
-				//ЗДЕСЬ поменяла  action на getline (cin, action) - не работает..
-				//cin >> action;
-				getline (cin, action);
+				cin >> action;
 				list.add(action);
 				break;
 			case 'd': 

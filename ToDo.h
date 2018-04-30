@@ -23,7 +23,8 @@ class ToDo {
 	~ToDo (); // Destroy the list
 	
 	//void add (getline (cin, item)); // add stuff to list
-	void add(string item);
+	//ЗДЕСЬ поменяла string item на getline (cin, item) - не работает..
+	void add (string item);
 	void  done (); // finish/deletes the last thing in list
 	void print ();
 	

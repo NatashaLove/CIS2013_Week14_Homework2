@@ -12,7 +12,7 @@ using namespace std;
 //create list of length len
 	ToDo::ToDo (int len){
 		length=len;
-		list = new string [length];
+		list = new string [length]; // length -кол-во слов;
 	}
 	
 	
@@ -23,7 +23,12 @@ using namespace std;
 		//add save file
 		delete [] list;
 	}
-	void ToDo:: add (getline (cin, item)){
+	
+	//void ToDo:: add (getline (cin, item)){
+	//ЗДЕСЬ поменяла string item на getline (cin, item) - не работает..	
+	void ToDo::add (string item){	
+		getline (cin, item);
+		
 		if (next <length) {
 			list [next] = item;
 			next++;
@@ -36,7 +41,7 @@ using namespace std;
 	}	// finish - delete the last thing in list
 	
 	void ToDo::print ()	{
-		for (int i=0;i<next; i++) {
+		for (int i=-1;i<next; i++) {
 			cout << i << list [i] << endl;
 		}
 	}
