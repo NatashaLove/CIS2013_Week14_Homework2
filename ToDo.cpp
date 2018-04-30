@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <cstring> 
 #include <string> // look for file in standard library
 #include "ToDo.h" // look for the file here (custom file header)
@@ -20,8 +21,27 @@ using namespace std;
 	// need destructor to free memory
 	// Destructor Delete the list - don't need to call it, it will be called automatically when the object is out of scope 
 	ToDo::~ToDo () {
+		ofstream out_stream;
 		//add save file
-		delete [] list;
+		out_stream.open("outfile.dat");
+		
+		// файл сохраняется, НО не список... неправильно сохраняется..
+		
+		if (out_stream.is_open()) {
+			
+		   for(int i=0; i <length; i++)				 
+			//  out_stream << item[i] <<endl;
+		   out_stream << item[i];
+		   
+		} else if (out_stream.fail())
+			{
+			cout << "Input file opening failed.\n";
+			exit(1);
+			}
+		//out_stream << 
+		//delete [] list;
+		
+		out_stream.close( );
 	}
 	
 	
