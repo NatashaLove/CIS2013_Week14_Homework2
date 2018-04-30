@@ -25,13 +25,13 @@ using namespace std;
 		//add save file
 		out_stream.open("outfile.dat");
 		
-		// файл сохраняется, НО не список... неправильно сохраняется..
+		// файл сохраняется, НО не список... Список НЕ сохраняется..
 		
 		if (out_stream.is_open()) {
 			
 		   for(int i=0; i <length; i++)				 
 			//  out_stream << item[i] <<endl;
-		   out_stream << item[i];
+		   out_stream << list [i];
 		   
 		} else if (out_stream.fail())
 			{

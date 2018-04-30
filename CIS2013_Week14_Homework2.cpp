@@ -19,7 +19,7 @@ int main(){
 	
 	// Array of ToDo objects
 	// Make sure you have a () constructor
-	ToDo manylists[10];
+	//ToDo manylists[10];
 	
 	// manylists[2].print();
 	// manylists[1].print();
