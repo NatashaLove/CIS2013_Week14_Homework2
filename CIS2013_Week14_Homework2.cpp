@@ -39,7 +39,7 @@ int main(){
 				cout << "Name a todo item: ";
 				//cin >> action;
 				//ЗДЕСЬ поменяла cin >> action на getline (cin, action)
-				getline(cin, action);
+				getline(cin, action, '\n');
 				list.add(action);
 				break;
 			case 'd': 
