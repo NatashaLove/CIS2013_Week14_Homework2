@@ -58,7 +58,7 @@ int main(){
 				list.print();
 				break;
 			case 'x':
-				exit (1);
+				//exit (1);
 				// All done with todo list
 				break;
 			default : 
