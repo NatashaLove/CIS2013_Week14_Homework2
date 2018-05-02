@@ -39,12 +39,12 @@ int main(){
 				cout << "Name a todo item: ";
 				//cin >> action;
 				//ЗДЕСЬ поменяла cin >> action на getline (cin, action)
-				getline(cin, action, '\n');
+				getline(cin, action);
 				list.add(action);
 				break;
 			case 'd': 
 				{
-				cout << "Number of the item in the list to finish: ";
+				cout << "Number of the item in the list to delete: ";
 				int n;
 				cin >> n;
 				cin.ignore();

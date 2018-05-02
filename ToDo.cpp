@@ -17,18 +17,6 @@ using namespace std;
 		file_read();
 	}
 	
-	void ToDo::file_read() {
-		
-		ifstream ifstr(file_name);
-		if (!ifstr.fail())
-		{
-			string s;
-			while (getline(ifstr, s))
-			{
-				add(s);
-			}
-		}
-	}
 	
 	
 	// need destructor to free memory
@@ -48,17 +36,31 @@ using namespace std;
 			for (int i = 0;i < next;i++) {
 				ofstr << list[i] << endl;
 			}
-			 ofstr.flush();
-			 //close( );
-		} else {
-			cout << "Input file opening failed.\n";
-			exit(1);
-		}
+			 ofstr.close();
+			 //flush( );
+		} 
+		// else {
+			// cout << "Input file opening failed.\n";
+			// exit(1);
+		// }
 	}
+	
+	void ToDo::file_read() {
+		
+		ifstream ifstr(file_name);
+		if (!ifstr.fail())
+		{
+			string s;
+			while (getline(ifstr, s))
+			{
+				add(s);
+			}
+		}
+	} 
 	
 	//ЗДЕСЬ поменяла string item на getline (cin, item) 
 	void ToDo::add (string item){	
-		getline (cin, item);
+		//getline (cin, item);
 		
 		if (next <length) {
 			list [next] = item;
