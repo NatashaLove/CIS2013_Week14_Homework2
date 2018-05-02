@@ -11,7 +11,8 @@ int main(){
 	int len = 0;
 	string action;
 	
-	cout << "How long do you want your list: ";
+	cout << endl;
+	cout << "	How long do you want your list: ";
 	cin >> len;
 	
 	ToDo list(len);
@@ -24,19 +25,20 @@ int main(){
 	// manylists[1].print();
 	
 	while(next != 'x'){
-		
+		cout << endl;
 		cout << "Add to list (a)" << endl;
 		cout << "Done list item (d)" << endl;
 		cout << "Print list (p)" << endl;
 		cout << "Exit list app (x)" << endl;
 		cout << "What do you want to do: "<< endl;
+		cout << endl;
 		cin >> next;
 		cin.ignore();
 		cout << endl;
 		
 		switch(next){
 			case 'a':
-				cout << "Name a todo item: ";
+				cout << "	Name a todo item: ";
 				//cin >> action;
 				//ЗДЕСЬ поменяла cin >> action на getline (cin, action)
 				getline(cin, action, '\n');
@@ -44,7 +46,7 @@ int main(){
 				break;
 			case 'd': 
 				{
-				cout << "Number of the item in the list to delete: ";
+				cout << "	Number of the item in the list to delete: ";
 				int n;
 				cin >> n;
 				cin.ignore();
@@ -60,7 +62,7 @@ int main(){
 				// All done with todo list
 				break;
 			default : 
-		cout << "Illegal value." << endl;
+		cout << "	Illegal value." << endl;
 		cout << endl;
 				break;
 		}

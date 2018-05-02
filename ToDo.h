@@ -30,7 +30,7 @@ class ToDo {
 	// add stuff to list
 	//ЗДЕСЬ поменяла string item на getline (cin, item) 
 	void add (string item);
-	void  done (); // finish/deletes the last thing in list
+	void done (); // finish/deletes the last thing in list
 	void done(int n); // deletes the chosen item
 	// 
 	void print ();

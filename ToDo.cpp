@@ -90,7 +90,7 @@ using namespace std;
 	// 
 	void ToDo::print ()	{
 		for (int i=0;i<next; i++) {
-			cout << " " << i << ": " << list[i] << endl;
+			cout << " 	" << i << ": " << list[i] << endl;
 		}
 	}
 	
