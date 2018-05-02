@@ -36,7 +36,9 @@ int main(){
 		switch(next){
 			case 'a':
 				cout << "Name a todo item: ";
-				cin >> action;
+				//cin >> action;
+				
+				getline(cin, action, '\n');
 				list.add(action);
 				break;
 			case 'd': 
