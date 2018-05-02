@@ -6,8 +6,7 @@
 using namespace std;
 
 int main(){
-	ifstream in_stream;
-	ofstream out_stream;
+	
 	char next;
 	int len = 0;
 	string action;
@@ -32,21 +31,28 @@ int main(){
 		cout << "Exit list app (x)" << endl;
 		cout << "What do you want to do: "<< endl;
 		cin >> next;
+		cin.ignore();
+		cout << endl;
 		
 		switch(next){
 			case 'a':
 				cout << "Name a todo item: ";
 				//cin >> action;
-				
+				//ЗДЕСЬ поменяла cin >> action на getline (cin, action)
 				getline(cin, action, '\n');
 				list.add(action);
 				break;
 			case 'd': 
-				list.done();
+				{
+				cout << "Number of the item in the list to finish: ";
+				int n;
+				cin >> n;
+				cin.ignore();
+				list.done(n);
+				}
 				break;
 			case 'p':
 			
-			// почему то печатается БЕЗ первого слова..
 				list.print();
 				break;
 			case 'x':
