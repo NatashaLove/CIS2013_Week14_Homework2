@@ -17,6 +17,18 @@ using namespace std;
 		file_read();
 	}
 	
+	void ToDo::file_read() {
+		
+		ifstream ifstr(file_name);
+		if (!ifstr.fail())
+		{
+			string s;
+			while (getline(ifstr, s))
+			{
+				add(s);
+			}
+		}
+	}
 	
 	
 	// need destructor to free memory
@@ -59,9 +71,9 @@ using namespace std;
 		list [next] = "";
 	}	// finish - delete the last thing in list
 	
-	// почему то печатается БЕЗ первого слова..
+	// 
 	void ToDo::print ()	{
 		for (int i=0;i<next; i++) {
-			cout << i << list [i] << endl;
+			cout << " " << i << ": " << list[i] << endl;
 		}
 	}
