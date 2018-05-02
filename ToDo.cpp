@@ -51,7 +51,11 @@ using namespace std;
 		if (!ifstr.fail())
 		{
 			string s;
-			while (getline(ifstr, s))
+			
+			// while (getline(ifstr, s)) - это нестандартная операция.. пока что то есть в файле - читаем..
+			
+			while (!getline(ifstr, s).eof())	// читать пока getline не упрется в конец файла
+			// т.е. пока неправда(!), что мы достигли конец файла eof() - продолжаем читать
 			{
 				add(s);
 			}
@@ -73,12 +77,14 @@ using namespace std;
 		list [next] = "";
 	}	// finish - delete the last thing in list
 	
+	// loop в done() сдвигает все элементы после завершенного, по сути - удаляет завершенный элемент со сдвигом всех последующих влево, 
+	// например 1.2.3.4.5, удаляем 2 - получаем 1. .3.4.5, после сдвига получаем 1.3.4.5
 	void ToDo::done(int n) {
 		
 		if (n <= next)
 		{
 			for (int i = n; i < length - 1; i++) {
-				list[i] = list[i + 1];
+				list[i] = list[i + 1]; // [i + 1] - это следующий элемент, который мы ставим на место текущего
 			}
 			//set last element to ""
 			// list[length - 1] = "";//it is not necessary since we correct next
@@ -94,6 +100,6 @@ using namespace std;
 		}
 	}
 	
-	int ToDo::getLength() {
-	return length;
-	}
+	// int ToDo::getLength() {
+	// return length;
+	// }
