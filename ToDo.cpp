@@ -71,9 +71,27 @@ using namespace std;
 		list [next] = "";
 	}	// finish - delete the last thing in list
 	
+	void ToDo::done(int n) {
+		
+		if (n <= next)
+		{
+			for (int i = n; i < length - 1; i++) {
+				list[i] = list[i + 1];
+			}
+			//set last element to ""
+			// list[length - 1] = "";//it is not necessary since we correct next
+			next--;
+		}
+	}
+
+	
 	// 
 	void ToDo::print ()	{
 		for (int i=0;i<next; i++) {
 			cout << " " << i << ": " << list[i] << endl;
 		}
+	}
+	
+	int ToDo::getLength() {
+	return length;
 	}
